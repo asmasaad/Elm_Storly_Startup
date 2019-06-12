@@ -91,7 +91,7 @@ body.building_version .first-section {
 body.building_version .first-section h2 {
     color: #fff;
     font-weight: 700;
-    font-size: 80px;
+    font-size: 60px;
     margin-top: 0;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
@@ -127,7 +127,7 @@ h2 {
     color: #111;
     font-weight: 900;
     padding: 10px 30px;
-    float: left;
+    /*float: left;*/
     border-radius: 50px;
     text-transform: uppercase;
     transition: ease all 1s;
@@ -564,7 +564,7 @@ footer#footer h2::after {
     text-align: center;
 }
 .icon-service img {
-    width: 120px;
+    width: 75px;
 }
 .service-inform-text {
     float: left;
