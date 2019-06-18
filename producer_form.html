@@ -30,6 +30,96 @@
      margin-left: 30px;
    }
    </style>
+
+    <head>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+      <script >
+   
+   function submitToAPI(e) {
+       e.preventDefault();
+       var URL = "https://6yqgf7jsh6.execute-api.eu-west-1.amazonaws.com/storly/warehouse";
+
+          /* var FNAME = /[A-Za-z]{1}[A-Za-z]/;
+            if (!FNAME.test($("#first_name").val())) {
+                         alert ("Name can not less than 2 char");
+                return;
+            }
+            var LNAME = /[A-Za-z]{1}[A-Za-z]/;
+            if (!LNAME.test($("#last_name").val())) {
+                alert ("Please enter valid mobile number");
+                return;
+            }
+        
+*/
+
+
+
+   var name = $("#first_name").val();
+   var lastname = $("#last_name").val();
+   var email = $("#email").val();
+   var phone = $("#phone").val();
+   var city = $("#city").val();
+   var warehouse_location = $("#warehouse_location").val();
+   var space = $("#space").val();
+   var Contracts_length = $("#contract").val();
+   var services = $("#services").val();
+   var working_days = $("#working_days").val();
+   var working_hours = $("#working_hours").val();
+   var temp = $("#temp option:selected").text();
+   var license = $("input[name='license']:checked").val();
+   var Stored_items = $("#Stored_items").val();
+   var cost_per_week = $("#cost_per_week").val();
+   var cost_per_month = $("#cost_per_month").val();
+   var cost_per_year = $("#cost_per_year").val();
+   var Frequency_of_orders_shipped  = $("#fulfill").val();
+       var data = {
+          name : name,
+          lname : lastname,
+          email : email,
+          phone : phone,
+          city : city, 
+          warehouse_location : warehouse_location ,
+          space : space,
+          Contracts_length :Contracts_length,
+          services : services,
+          working_days : working_days,
+          working_hours : working_hours,
+          temp : temp,
+          license : license ,
+          Stored_items :Stored_items,
+          cost_per_week : cost_per_week,
+          cost_per_month : cost_per_month,
+          cost_per_year : cost_per_year,
+          Frequency_of_orders_shipped : Frequency_of_orders_shipped};
+
+       $.ajax({
+         type: "POST",
+         url : "https://6yqgf7jsh6.execute-api.eu-west-1.amazonaws.com/storly/warehouse",
+         dataType: "json",
+         crossDomain: "true",
+         contentType: "application/json; charset=utf-8",
+         data: JSON.stringify(data),
+
+         
+         success: function () {
+           // clear form and show a success message
+             window.location.href = "thank_you.html"; 
+         },
+         error: function () {
+           // show an error message
+           alert("UnSuccessfull");
+         }});
+     }
+</script>
+   </head>
+
+
+
+
+
+
+
    </head>
    <body class="building_version" data-spy="scroll" data-target=".header">
       <!-- LOADER -->
@@ -78,8 +168,8 @@
                      <li class="active"><a data-scroll href="index.html">Home</a></li>
                      <li><a data-scroll href="index.html#about">About Us <span class="hidden-xs">*</span></a></li>
                      <li><a data-scroll="" href="index.html#price">Features</a></li>
-                     <li><a data-scroll="" href="list_warehouse.html#services">Benefits</a></li>
-                     <li><a data-scroll="" href="list_warehouse.html#How">How Storly works</a></li>
+                     <li><a data-scroll="" href="index.html#services">Benefits</a></li>
+                     <li><a data-scroll="" href="index.html#How">How Storly works</a></li>
                   </ul>
                </div>
             </div>
@@ -637,63 +727,126 @@
                <div class="col-md-12">
                   <div class="contact_form">
                      <div id="message"></div>
-                     <form id="contactform" class="row" action="contact.php" name="contactform" method="post">
+                     <form id="contactform" class="row" name="contactform" method="post">
                         <fieldset class="row-fluid">
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name">
+                             <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" required >
                           </div>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name">
+                             <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name" required >
                           </div>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <input type="email" name="email" id="email" class="form-control" placeholder="Your Email">
+                             <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required >
                           </div>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                              <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone">
                           </div>
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="first_name" id="p_city" class="form-control" placeholder="Which city is near your warehouse ?">
+                               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                             <select name="city" id="city" class="selectpicker form-control" data-style="btn-white">
+                                 <option value="__">Which city is near your warehouse ? </option>
+                                 <option value="riyadh">Riyadh</option>
+                                 <option value="jeddah"> Jeddah</option>
+                                  <option value="dammam"> Dammam </option>
+                                 <option value="qassim"> Qassim</option>
+                              </select>
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="last_name" id="district" class="form-control" placeholder="Where is your warehouse located ?">
+                              <input type="text" name="warehouse_location" id="warehouse_location" class="form-control" placeholder="Where is your warehouse located ?">
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="email" name="email" id="storage_space" class="form-control" placeholder="How much space is available for rent ?">
+                              <input type="space" name="space" id="space" class="form-control" placeholder="How much space is available for rent ?">
+                           </div>
+                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                             <select  name="contract" id="contract"  class="selectpicker form-control" data-style="btn-white">
+                                 <option value="__">How long are your contracts ?  </option>
+                                 <option value="weekly">Weekly</option>
+                                 <option value="monthly"> Monthly </option>
+                                  <option value="annual"> Annual</option>
+                                 <option value="lSS">LSS</option>
+                                  <option value="agility">Agility </option>
+                                 <option value="flow">Flow</option>
+                                 <option value="Other"> Other</option>
+                              </select>
+                           </div>
+                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                             <select  name="services" id="services"  class="selectpicker form-control" data-style="btn-white">
+                                 <option value="__">What fulfilment service do you offer ? </option>
+                                 <option value="pick">Pick and Pack</option>
+                                 <option value="delivery">Delivery </option>
+                              </select>
+                           </div>
+                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                             <select  name="working_hours" id="working_hours"  class="selectpicker form-control" data-style="btn-white">
+                                 <option value="no choice"> What are the working hours of your warehouse ? </option>
+                                 <option value="08:00 A.M. – 04:00 P.M "> 08:00 A.M. – 04:00 P.M </option>
+                                 <option value="08:00 A.M. – 10:00 P.M. "> 08:00 A.M. – 10:00 P.M. </option>
+                                  <option value=" 24 Hours"> 24 Hours </option>
+                              </select>
+                           </div>
+
+
+                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                             <select  name="working_days" id="working_days"  class="selectpicker form-control" data-style="btn-white">
+                                 <option value="no choice "> What are the working days of your warehouse ? </option>
+                                 <option value="Sunday – Thursday "> Sunday – Thursday  </option>
+                                 <option value=" Saturday – Thursday "> Saturday – Thursday  </option>
+                                  <option value=" 7 Days a week "> 7 Days a week </option>
+                              </select>
                            </div>
 
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="phone" id="duration" class="form-control" placeholder="How long are your contracts ? (monthly, annual .. etc)">
+                              <input type="text" name="temp" id="temp" class="form-control" placeholder="What is your warehouse temperature?">
+                           </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                             <select name="temp" id="temp" class="selectpicker form-control" data-style="btn-white">
+                                 <option value="No Choice">What is your warehouse temperature ?</option>
+                                 <option value="no"> No control on temperature </option>
+                                 <option value="one"> 25 to 30</option>
+                                  <option value="two "> 20 to 25 </option>
+                                 <option value="three"> 10 to 20</option>
+                                  <option value="minus_two">   0 to 10</option>
+                                 <option value="minus_one "> -10 to 0</option>
+                                 <option value="minus_three"> -20 to -10</option>
+                              </select>
+                           </div>
+
+                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                             Do you have all warehouse licenses  ?   
+                              <label class="radio-inline"><input type="radio" name="license" value="yes" checked> Yes </label>
+                              <label class="radio-inline"><input type="radio" value="no" name="license" >No</label>
+
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="phone" id="service" class="form-control" placeholder="What fulfilment service do you offer ?">
+                             <select name="Stored_items" id="Stored_items" class="selectpicker form-control" data-style="btn-white">
+                                 <option value="No Choice">What do you store usually? </option>
+                                 <option value="General">General</option>
+                                 <option value="Construction"> Construction</option>
+                                  <option value="Food and beverage ">Food and beverage </option>
+                                 <option value="Pharmaceuticals"> Pharmaceuticals</option>
+                                  <option value="Clothes">Clothes</option>
+                                 <option value="Petro-chemicals ">Petro-chemicals </option>
+                                 <option value="Other"> Other</option>
+                              </select>
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="phone" id="p_hours" class="form-control" placeholder="What are the working hours of your warehouse?">
+                              <input type="text" name="cost_per_week" id="cost_per_week" class="form-control" placeholder="How much would costs to rent out a pallet per week?">
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="phone" id="p_days" class="form-control" placeholder="What are the working days of your warehouse?">
+                              <input type="text" name="cost_per_month" id="cost_per_month" class="form-control" placeholder="How much would costs to rent out a pallet per month?">
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="phone" id="p_temp" class="form-control" placeholder="What is your warehouse temperature?">
+                              <input type="text" name="cost_per_year" id="cost_per_year" class="form-control" placeholder="How much would costs to rent out a pallet per year?">
                            </div>
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="phone" id="license" class="form-control" placeholder="Do you have all warehouse licenses?">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                             <select name="fulfill" id="fulfill" class="selectpicker form-control" data-style="btn-white">
+                                 <option value="No Choice">How many times are you able to fulfil orders ?  </option>
+                                 <option value="more than once"> More than once a day </option>
+                                 <option value="daily">  Daily </option>
+                                  <option value="weekly "> Weekly </option>
+                                 <option value="monthly"> Monthly </option>
+                              </select>
                            </div>
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="phone" id="items" class="form-control" placeholder="What do you store usually?">
-                           </div>
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="phone" id="p_cost" class="form-control" placeholder="How much would costs to rent out a pallet per week?">
-                           </div>
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="phone" id="p_rent" class="form-control" placeholder="How much would costs to rent out a pallet per month?">
-                           </div>
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="phone" id="p_ycost" class="form-control" placeholder="How much would costs to rent out a pallet per year?">
-                           </div>
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="phone" id="fulfill" class="form-control" placeholder="How many times are you able to fulfil orders ?">
-                           </div>
+
                            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                               <label class="sr-only">Select Department</label>
                               <select name="select_service" id="select_service" class="selectpicker form-control" data-style="btn-white">
@@ -707,7 +860,7 @@
                               <textarea class="form-control" name="comments" id="comments" rows="6" placeholder="Give us more details.."></textarea>
                            </div> -->
                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                              <button type="submit" onclick="location.href='thank_you.html';" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Submit!</button>
+                              <button type="submit" onclick="submitToAPI(event)"    value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Submit!</button>
                            </div>
                         </fieldset>
                      </form>
@@ -740,9 +893,9 @@
                         <li><a data-scroll="" href="index.html">Home</a></li>
                         <li><a data-scroll="" href="index.html#about">About Us</a></li>
                         <li><a data-scroll="" href="index.html#price">Features</a></li>
-                        <li><a data-scroll="" href="list_warehouse.html#services">Benefits</a></li>
-                        <li><a data-scroll="" href="list_warehouse.html#How">How Storly works</a></li>
-					 </ul>
+                        <li><a data-scroll="" href="index.html#services">Benefits</a></li>
+                        <li><a data-scroll="" href="index.html#How">How Storly works</a></li>
+                </ul>
                   </div>
                </div>
                <div class="col-md-4">
@@ -751,7 +904,7 @@
                      <ul>
                         <li class="address clearfix">
                            <span class="hl">Address:</span>
-                           <span class="text">Riyadh, King Fahad road, Olaya view, 3rd floor.</span>
+                           <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
                         </li>
                         <li class="phone clearfix">
                            <span class="hl">Phone:</span>
