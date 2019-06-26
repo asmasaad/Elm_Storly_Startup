@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- Site Metas -->
-   <title>Consumer form</title>
+   <title>Get started with Storly</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -30,81 +30,6 @@
      margin-left: 30px;
    }
    </style>
-   <head>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-      <script >
-
-   function submitToAPI(e) {
-       e.preventDefault();
-       var URL = "https://6yqgf7jsh6.execute-api.eu-west-1.amazonaws.com/storly/consumer";
-
-            var FNAME = /[A-Za-z]{1}[A-Za-z]/;
-            if (!FNAME.test($("#first_name").val())) {
-                         alert ("Name can not less than 2 char");
-                return;
-            }
-
-
-
-   var name = $("#first_name").val();
-   var lastname = $("#last_name").val();
-   var email = $("#email").val();
-   var phone = $("#phone").val();
-   var space = $("#space").val();
-   var time = $("#time").val();
-   var city = $("#city").val();
-   var number_of_warehousing = $("#number_of_warehousing").val();
-   var WHservice = $("#WHservice").val();
-   var order_rate = $("#order_rate").val();
-   var temp = $("#temp").val();
-   var customer_type = $("#customer_type").val();
-   var industry = $("#industry").val();
-   var working_days = $("#working_days").val();
-   var working_hours = $("#working_hours").val();
-   var storage_place = $("#storage_place").val();
-   var company_size = $("#company_size").val();
-   var storage_costs = $("#storage_costs").val();
-       var data = {
-          name : name,
-          lname : lastname,
-          email : email,
-          phone : phone,
-          space : space,
-          time : time,
-          city : city,
-          number_of_warehousing :number_of_warehousing,
-          WHservice : WHservice,
-          order_rate : order_rate ,
-          temp : temp,
-          customer_type : customer_type ,
-          industry : industry,
-          working_days : working_days,
-          working_hours : working_hours,
-          storage_place : storage_place,
-          company_size : company_size,
-          storage_costs : storage_costs};
-
-       $.ajax({
-         type: "POST",
-         url : "https://6yqgf7jsh6.execute-api.eu-west-1.amazonaws.com/storly/consumer",
-         dataType: "json",
-         crossDomain: "true",
-         contentType: "application/json; charset=utf-8",
-         data: JSON.stringify(data),
-
-
-         success: function () {
-           // clear form and show a success message
-             window.location.href = "thank_you.html";
-         },
-         error: function () {
-           // show an error message
-           alert("UnSuccessfull");
-         }});
-     }
-</script>
-   </head>
    </head>
    <body class="building_version" data-spy="scroll" data-target=".header">
       <!-- LOADER -->
@@ -150,32 +75,32 @@
                </div>
                <div id="navbar" class="navbar-collapse collapse">
                   <ul class="nav navbar-nav navbar-right">
-                     <li class="active"><a data-scroll href="index.html">Home</a></li>
-                     <li><a data-scroll href="index.html#about">About Us <span class="hidden-xs">*</span></a></li>
-                     <li><a data-scroll="" href="index.html#price">Features</a></li>
-                     <li><a data-scroll="" href="index.html#services">Benefits</a></li>
-                     <li><a data-scroll="" href="index.html#How">How Storly works</a></li>
+                     <li class="active"><a data-scroll href="#home">Home</a></li>
+                     <li><a data-scroll href="#about">About Us</a></li>
 
-                     <!-- <li><a data-scroll href="#projects">Our Work</a></li>
-                     <li><a data-scroll href="#testimonials">Testimonials</a></li>
-                     <li><a data-scroll href="#price">Price</a></li>
-                     <li><a data-scroll href="#contact">Contact Us</a></li>  -->
+                     <!-- <li><a data-scroll href="#projects">Our Work</a></li> -->
+                     <!-- <li><a data-scroll href="#testimonials">Testimonials</a></li> -->
+                     <li><a data-scroll href="#price">Features</a></li>
+                     <li><a data-scroll href="list_warehouse.html#services">Benefits</a></li>
+                     <li><a data-scroll href="list_warehouse.html#How">How Storly works</a></li>
+                     <li><a data-scroll href="indexAR.html">العربية</a></li>
+
                   </ul>
                </div>
             </div>
          </nav>
       </header>
-      <!-- <div id="home" class="parallax first-section" data-stellar-background-ratio="0.4" style="background-image:url('images/wp3702675.jpg');">
+      <!-- <div id="home" class="parallax first-section" data-stellar-background-ratio="0.4" style="background-image:url('images/jezael-melgoza-326121-unsplash.jpg');">
          <div class="container">
             <div class="row">
                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-md-offset-2 text-center">
                   <div class="big-tagline">
                      <img class="border-line-img" src="uploads/building/sep-line-white.png" alt="" />
-                     <h2><span class="yellow" style="background-color: white;">On-Demand warehouse and fulfillment</span></h2>
+
+                     <h2><span class="yellow" style="background-color: white; color: #F0A11E">On-Demand warehouse and fulfillment</span></h2>
                      <img style="margin-bottom:40px;" class="border-line-img" src="uploads/building/sep-line-white.png" alt="" />
-                      <p class="lead">“Storely” is a digital platform that enable on-demand warehousing and fulfillment services in flexible, cost effective and easy manner </p>
-                     <a data-scroll href="#services" class="btn btn-light btn-radius btn-brd">I'm looking for con warehouse space</a>
-                     <a data-scroll href="#services" class="btn btn-light btn-radius btn-brd">I have warehouse space for rent</a>
+                     <a data-scroll href="consumer_form.html" class="btn btn-light btn-radius btn-brd" style="margin-bottom: 10px;">I'm looking for warehouse space</a>
+                     <a data-scroll href="list_warehouse.html" class="btn btn-light btn-radius btn-brd">I have warehouse space for rent</a>
 
                   </div>
                </div>
@@ -183,22 +108,29 @@
          </div>
       </div> -->
       <!-- end section -->
-      <!-- <div id="about" class="section wb">
+      <div id="about" class="section wb">
          <div class="container">
             <div class="row">
                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                   <div class="message-box">
                      <h2>About Us</h2>
-                     <h5>WE ASPIRE TO BECOME THE LEADERS IN THE WAREHOUSING AND FUFILLMENT INDUSTRY!</h5>
+                     <!--  Go-to platform for all fulfillment needs by 2023 to enable KSA thrive as logistic hub
+-->
+                     <h5>WE ASPIRE TO BECOME THE LEADERS IN THE WAREHOUSING AND FUFILLMENT INDUSTRY BY 2030 AND TO ENABLE KSA THRIVE AS A LOGISTIC HUB!</h5>
                   </div>
+                  <!-- end messagebox -->
                </div>
+               <!-- end col -->
                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                   <div class="message-box">
                      <p class="lead">“Storely” is a digital platform that enable on-demand warehousing and fulfillment services in flexible, cost effective and easy manner. </p>
                      <a href="#" class="read-more">Read More</a>
                   </div>
+                  <!-- end messagebox -->
                </div>
+               <!-- end col -->
             </div>
+            <!-- end row -->
             <div class="row text-center about-row">
                <div class="col-md-4 col-sm-12 col-xs-12">
                   <div class="row">
@@ -210,6 +142,7 @@
                         <h3>Renting space made easy</h3>
                         <p>On-demand warehousing and fulfillment Marketplace to rent out storage capacity in flexible and easy manner</p>
                      </div>
+                     <!-- end service -->
                   </div>
                </div>
                <div class="col-md-4 col-sm-12 col-xs-12">
@@ -222,6 +155,7 @@
                         <h3>Flexible contracts</h3>
                         <p>Flexible contracts on weekly and monthly basis where you pay per pallet with No minimums, No long-term contracts, No hidden charges.</p>
                      </div>
+                     <!-- end service -->
                   </div>
                </div>
                <div class="col-md-4 col-sm-12 col-xs-12">
@@ -234,83 +168,17 @@
                         <h3>On- demand fulfillment</h3>
                         <p>Transform warehouse into turnkey on-demand fulfillment including Packaging, Shipping .. etc</p>
                      </div>
+                     <!-- end service -->
                   </div>
                </div>
             </div>
+            <!-- end row -->
          </div>
+         <!-- end container -->
          <div class="sep1"></div>
-      </div> -->
+      </div>
       <!-- end section -->
-      <!-- <div id="services" class="parallax section db parallax-off no-padding-bottom"  >
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
-                  <div class="message-box">
-                     <h2>Services</h2>
-                     <h5>WE ARE THE LEADERS IN THE CONSTRUCTION INDUSTRY!</h5>
-                  </div>
 
-               </div>
-               <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
-                  <div class="row">
-                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="service-inform">
-                           <div class="icon-service">
-                              <img src="images/icon1.png" alt="#" />
-                           </div>
-                           <div class="service-inform-text">
-                              <h3>Service One</h3>
-                              <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="service-inform">
-                           <div class="icon-service">
-                              <img src="images/icon4.png" alt="#" />
-                           </div>
-                           <div class="service-inform-text">
-                              <h3>Service Two</h3>
-                              <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="row">
-               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 serv" style="background-color:#222;">
-                  <div class="serv-blog">
-                     <img src="images/sr1.png" alt="#" />
-                  </div>
-                  <div class="serv-blog-cont">
-                     <h3>Manufacturing</h3>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 serv" style="background:#181818;">
-                  <div class="serv-blog">
-                     <img src="images/sr2.png" alt="#" />
-                  </div>
-                  <div class="serv-blog-cont">
-                     <h3>Fabrication</h3>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 serv" style="background:#222;">
-                  <div class="serv-blog">
-                     <img src="images/sr3.png" alt="#" />
-                  </div>
-                  <div class="serv-blog-cont">
-                     <h3>Construction</h3>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div> -->
 
       <!-- <div id="projects" class="section">
          <div class="container">
@@ -549,14 +417,14 @@
          </div>
       </div> -->
       <!-- end section -->
-      <!-- <div id="price" class="section pr">
+      <div id="price" class="section pr">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="tab-content">
                      <div class="tab-pane active fade in" id="tab1">
                         <div class="row text-center">
-                           <div class="col-md-4">
+                           <!-- <div class="col-md-4">
                               <div class="pricing-table">
                                  <div class="pricing-table-header">
                                     <h2>Shared Hosting</h2>
@@ -574,30 +442,88 @@
                                     <a href="#contact" data-scroll="" class="btn btn-dark btn-radius btn-brd">Order Now</a>
                                  </div>
                               </div>
-                           </div>
-                           <div class="col-md-4">
+                           </div> -->
+                           <div class="col-md-6">
                               <div class="pricing-table pricing-table-highlighted">
-                                 <div class="pricing-table-header grd1">
-                                    <h2>WordPress Hosting</h2>
-                                    <h3>$59/year</h3>
+                                 <div class="pricing-table-header ">
+                                    <h2 style="font-weight: bold">TRADITIONAL WAREHOUSING & FULFILLMENT</h2>
+                                    <!-- <h3>$59/year</h3> -->
                                  </div>
                                  <div class="pricing-table-space"></div>
+
                                  <div class="pricing-table-text">
-                                    <p>This is a perfect choice for small businesses and startups.</p>
+                                   <p><strong>Long Term Commitments</strong></p><p>Sign multi-year leases or contracts</p>
                                  </div>
-                                 <div class="pricing-table-features">
+                                 <div class="pricing-table-text">
+                                   <p><strong>Confusing Pricing</strong></p><p>Complicated ratecards make it difficult to forecast</p>
+                                 </div>
+                                 <div class="pricing-table-text">
+                                   <p><strong>High Minimums</strong></p><p>Cost-prohibitive high monthly order minimums</p>
+                                 </div>
+                                 <div class="pricing-table-text">
+                                   <p><strong>Difficult Software</strong></p><p>Complicated software that takes months to setup</p>
+                                 </div>
+                                 <div class="pricing-table-text">
+                                   <p><strong>Poor Organization</strong></p><p>Multiple emails back and forth requesting status</p>
+                                 </div>
+                                 <div class="pricing-table-text">
+                                   <p><strong>Hard to Scale</strong></p><p>Each facility requires separate integrations and logins</p>
+                                 </div>
+                                 <!-- <div class="pricing-table-features">
                                     <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
                                     <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
                                     <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
                                     <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
                                     <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
-                                 </div>
-                                 <div class="pricing-table-sign-up">
+                                 </div> -->
+                                 <!-- <div class="pricing-table-sign-up">
                                     <a href="#contact" data-scroll="" class="btn btn-light btn-radius btn-brd grd1 effect-1">Order Now</a>
-                                 </div>
+                                 </div> -->
                               </div>
                            </div>
-                           <div class="col-md-4">
+                           <!-- trying the big card -->
+                           <div class="col-md-6">
+                              <div class="pricing-table pricing-table-highlighted">
+                                 <div class="pricing-table-header grd1">
+                                    <h2 style="font-weight: bold">STORLY WAREHOUSING & FULFILLMENT</h2>
+                                    <!-- <h3>$59/year</h3> -->
+                                 </div>
+                                 <div class="pricing-table-space"></div>
+                                 <div class="pricing-table-text">
+                                   <p><i class="fa fa-check" aria-hidden="true" style="color: green"></i><strong>Month-to-Month</strong></p><p>No long term contracts required, leave at any time</p>
+                                 </div>
+                                 <div class="pricing-table-text">
+                                   <p><i class="fa fa-check" aria-hidden="true" style="color: green"></i><strong>Easy-to-Understand Pricing</strong></p><p>Digital ratecard and line-level invoices for clarity</p>
+                                 </div>
+                                 <div class="pricing-table-text">
+                                   <p><i class="fa fa-check" aria-hidden="true" style="color: green"></i><strong>Low Minimums</strong></p><p>Low minimums that scale with your business</p>
+                                 </div>
+                                 <div class="pricing-table-text">
+                                   <p><i class="fa fa-check" aria-hidden="true" style="color: green"></i><strong>Easy To Use Software</strong></p><p>Learn in minutes. Move inventory in 24 hours</p>
+                                 </div>
+                                 <div class="pricing-table-text">
+                                   <p><i class="fa fa-check" aria-hidden="true" style="color: green"></i><strong>Modern Inventory Management</strong></p><p>Mange your inventory through our website, not email</p>
+                                 </div>
+                                 <div class="pricing-table-text">
+                                   <p><i class="fa fa-check" aria-hidden="true" style="color: green"></i><strong>One Login</strong></p><p>Access multiple warehouses with a single login</p>
+                                 </div>
+                                 <!-- <div class="pricing-table-text">
+                                    <p>This is a perfect choice for small businesses and startups.</p>
+                                 </div> -->
+                                 <!-- <div class="pricing-table-features">
+                                    <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
+                                    <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
+                                    <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
+                                    <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
+                                    <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                 </div> -->
+                                 <!-- <div class="pricing-table-sign-up">
+                                    <a href="#contact" data-scroll="" class="btn btn-light btn-radius btn-brd grd1 effect-1">Order Now</a>
+                                 </div> -->
+                              </div>
+                           </div>
+                           <!-- end of trying the big card -->
+                           <!-- <div class="col-md-4">
                               <div class="pricing-table">
                                  <div class="pricing-table-header">
                                     <h2>Reseller Hosting</h2>
@@ -615,7 +541,7 @@
                                     <a href="#contact" data-scroll="" class="btn btn-dark btn-radius btn-brd">Order Now</a>
                                  </div>
                               </div>
-                           </div>
+                           </div> -->
                         </div>
                      </div>
                      <div class="tab-pane fade" id="tab2">
@@ -667,23 +593,190 @@
                </div>
             </div>
          </div>
+      </div>
+      <!--moving services/benifits here -->
+      <!-- <div id="services" class="parallax section db parallax-off no-padding-bottom"  >
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                  <div class="message-box">
+                     <h2>Benefits of Listing Your Warehouse With Storly</h2>
+                  </div>
+
+               </div>
+               <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                  <div class="row">
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">
+                        <div class="service-inform">
+                           <div class="icon-service">
+                              <img src="images/revenue.png" alt="#" />
+                           </div>
+                           <div class="service-inform-text">
+                              <h3>Maximize Income</h3>
+                              <p>Easily turn your under-utilized space into an income stream..</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">
+                        <div class="service-inform">
+                           <div class="icon-service">
+                              <img src="images/analytics.png" alt="#" />
+                           </div>
+                           <div class="service-inform-text">
+                              <h3>Easy Software</h3>
+                              <p>Modern, easy-to-use, cloud-based Warehouse Management System..</p>
+                           </div>
+
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">
+                        <div class="service-inform">
+                           <div class="icon-service">
+                              <img src="images/calendar.png" alt="#" />
+                           </div>
+                           <div class="service-inform-text">
+                              <h3>On-Time Payments</h3>
+                              <p>Receive one check at the end of the month, no matter how many clients.</p>
+                           </div>
+
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+
+
+               </div>
+               <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                  <div class="row">
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">
+                        <div class="service-inform">
+                           <div class="icon-service">
+                              <img src="images/receipt.png" alt="#" />
+                           </div>
+                           <div class="service-inform-text">
+                              <h3>Automatic Invoicing</h3>
+                              <p>Automatically generates invoices and bills the customer.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">
+                        <div class="service-inform">
+                           <div class="icon-service">
+                              <img src="images/report.png" alt="#" />
+                           </div>
+                           <div class="service-inform-text">
+                              <h3>Real Time Reporting</h3>
+                              <p>Real-time reports and online communication. No lost emails.</p>
+                           </div>
+
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">
+                        <div class="service-inform">
+                           <div class="icon-service">
+                              <img src="images/notification.png" alt="#" />
+                           </div>
+                           <div class="service-inform-text">
+                              <h3>Notifications</h3>
+                              <p>Customizable notifications: receive alerts when action is required.</p>
+                           </div>
+
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+
       </div> -->
-      <div></div>
-      <div id="contact" class="section wb">
+      <!--  end of mocing services-->
+      <!-- start section of steps -->
+      <!-- <div id="How" class="section wb">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                  <div class="message-box">
+                     <h2>HOW STORLY WORKS</h2>
+                      <h5>WE ASPIRE TO BECOME THE LEADERS IN THE WAREHOUSING AND FUFILLMENT INDUSTRY BY 2030 AND TO ENABLE KSA THRIVE AS A LOGISTIC HUB!</h5>
+                  </div>
+               </div>
+                  <div class="message-box">
+                     <p class="lead">“Storely” is a digital platform that enable on-demand warehousing and fulfillment services in flexible, cost effective and easy manner. </p>
+                     <a href="#" class="read-more">Read More</a>
+                  </div>
+            </div>
+            <div class="row text-center about-row">
+               <div class="col-md-4 col-sm-12 col-xs-12">
+                  <div class="row">
+                     <div class="service-widget">
+                        <div class="post-media wow fadeIn">
+                        </div>
+                        <h3>1. List Your Warehouse for Free</h3>
+                        <p>Simply list your space and tell us more about your company by clicking the List Your Space For Free button. If you meet our requirements, you’ll be approved and onboarded.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-12 col-xs-12">
+                  <div class="row">
+                     <div class="service-widget">
+                        <div class="post-media wow fadeIn">
+                        </div>
+                        <h3>2. Manage Everything In One Place</h3>
+                        <p>Flowspace offers our warehouses a free, easy-to-use platform to handle inbound and outbound requests and to manage inventory. No upfront costs or technical resources required.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-12 col-xs-12">
+                  <div class="row">
+                     <div class="service-widget">
+                        <div class="post-media wow fadeIn">
+                        </div>
+                        <h3>3. Get Paid Each Month</h3>
+                        <p>Join our growing network of warehouses and begin generating revenue with your empty warehouse space. Payments are made on-time and invoicing clients is done automatically by us.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+         <div class="sep1"></div>
+<div class="container">
+         <div class="row-fluid">
+           <div class="sep1"></div>
+           <div class="col-md-6 text-center">
+         <div class="message-box">
+            <p class="lead"> </p>
+            <a href="consumer_form.html" class="read-more">I'm looking for warehouse space</a>
+         </div>
+         </div>
+         <div class="col-md-6 text-center">
+         <div class="message-box">
+            <p class="lead"> </p>
+            <a href="producer_form.html" class="read-more">I have warehouse space for rent</a>
+         </div>
+   </div>
+
+   </div>
+</div>
+
+      </div> -->
+      <!-- end steps section -->
+      <!-- <div id="contact" class="section wb">
          <div class="container">
             <div class="section-title row text-center">
                <div class="col-md-8 col-md-offset-2">
-
-                 <h3 style="color: white">s</h3>
-
-                  <h3>Let's get to know your business</h3>
-                  <p class="lead">Please answere the following questions, these questions will help us find you a warehouse that best fits your needs.</p>
+                  <h3>Contact Us</h3>
+                  <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
                </div>
-               <!-- end col -->
             </div>
-            <!-- end title -->
             <div class="row">
-               <!-- <div class="col-lg-4 col-md-4">
+               <div class="col-lg-4 col-md-4">
                   <div class="contant-info">
                      <ul class="item-display-block">
                         <li>
@@ -715,151 +808,25 @@
                         </li>
                      </ul>
                   </div>
-               </div> -->
-               <div class="col-md-12">
+               </div>
+               <div class="col-md-8">
                   <div class="contact_form">
                      <div id="message"></div>
-                     <form id="contactform" class="row" name="contactform" method="post">
+                     <form id="contactform" class="row" action="contact.php" name="contactform" method="post">
                         <fieldset class="row-fluid">
-                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name">
-                          </div>
-                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name">
-                          </div>
-                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <input type="email" name="email" id="email" class="form-control" placeholder="Your Email">
-                          </div>
-                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone">
-                          </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="space" id="space" class="form-control" placeholder="How much space do you need? In pallets.">
-                           </div>
-
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <select name="space" id="space" class="selectpicker form-control" data-style="btn-white">
-                                 <option value="No Choice ">How much space do you need? </option>
-                                 <option value=" 1-3 pallets ">1-3 pallets</option>
-                                 <option value=" 3-10 pallets"> 3-10 pallets</option>
-                                  <option value="10-30 pallets"> 10-30 pallets </option>
-                                 <option value="+30 pallets "> +30 pallets </option>
-                              </select>
-                           </div>
-
-
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="time" id="time" class="form-control" placeholder="How much time do you need your goods stored ?">
+                              <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name">
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="city" id="city" class="form-control" placeholder="What is the city that you want to store your goods ?">
-                           </div>
-
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="number_of_warehousing" id="number_of_warehousing" class="form-control" placeholder="How many warehousing and fulfillment locations do you have ?">
-                           </div>
-
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <select name="number_of_warehousing" id="number_of_warehousing" class="selectpicker form-control" data-style="btn-white">
-                                 <option value="No Choice ">How much space do you need? </option>
-                                 <option value=" One city is enough for me  "> One city is enough for me </option>
-                                 <option value=" Major cities"> Major cities e.g., 3 warehouses </option>
-                                  <option value="More than 3 warehouses"> More than 3 warehouses  </option>
-                              </select>
+                              <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name">
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="WHservice" id="WHservice" class="form-control" placeholder="What more services would you like to have ?">
+                              <input type="email" name="email" id="email" class="form-control" placeholder="Your Email">
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="order_rate" id="order_rate" class="form-control" placeholder="What is your order rate ? ">
+                              <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Website">
                            </div>
-
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <select name="order_rate" id="order_rate" class="selectpicker form-control" data-style="btn-white">
-                                 <option value="No Choice ">What is your order rate ?</option>
-                                 <option value="More than once a day"> More than once a day</option>
-                                 <option value=" Daily "> Daily </option>
-                                  <option value="Weekly"> Weekly  </option>
-                                 <option value=" Monthly "> Monthly </option>
-                                  <option value="Other"> Other </option>
-                              </select>
-                           </div>
-                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <select name="temp" id="temp" class="selectpicker form-control" data-style="btn-white">
-                                 <option value="No Choice">What is your warehouse temperature ?</option>
-                                 <option value="No control on temperature <"> No control on temperature </option>
-                                 <option value="25 to 30<"> 25 to 30</option>
-                                  <option value="20 to 25 "> 20 to 25 </option>
-                                 <option value="10 to 20"> 10 to 20</option>
-                                  <option value="0 to 10<"> 0 to 10</option>
-                                 <option value="-10 to 0"> -10 to 0</option>
-                                 <option value="-20 to -10"> -20 to -10</option>
-                              </select>
-                           </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <select name="customer_type" id="customer_type" class="selectpicker form-control" data-style="btn-white">
-                                 <option value="No Choice ">What is your use of storage ?</option>
-                                 <option value="Business"> Business</option>
-                                 <option value=" Government "> Government </option>
-                                  <option value="Personal "> Personal   </option>
-                                 <option value=" Charity "> Charity </option>
-                              </select>
-                           </div>
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <select name="industry" id="industry" class="selectpicker form-control" data-style="btn-white">
-                                 <option value="No Choice">Which business are you in </option>
-                                 <option value="General">General</option>
-                                 <option value="Construction"> Construction</option>
-                                  <option value="Food and beverage ">Food and beverage </option>
-                                 <option value="Pharmaceuticals"> Pharmaceuticals</option>
-                                  <option value="Clothes">Clothes</option>
-                                 <option value="Petro-chemicals ">Petro-chemicals </option>
-                                 <option value="Other"> Other</option>
-                              </select>
-                           </div>
-                                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <select  name="working_hours" id="working_hours"  class="selectpicker form-control" data-style="btn-white">
-                                 <option value="no choice"> What are the working hours of your warehouse ? </option>
-                                 <option value="08:00 A.M. – 04:00 P.M "> 08:00 A.M. – 04:00 P.M </option>
-                                 <option value="08:00 A.M. – 10:00 P.M. "> 08:00 A.M. – 10:00 P.M. </option>
-                                  <option value=" 24 Hours"> 24 Hours </option>
-                              </select>
-                           </div>
-                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <select  name="working_days" id="working_days"  class="selectpicker form-control" data-style="btn-white">
-                                 <option value="no choice "> What are the working days of your warehouse ? </option>
-                                 <option value="Sunday – Thursday "> Sunday – Thursday  </option>
-                                 <option value=" Saturday – Thursday "> Saturday – Thursday  </option>
-                                  <option value=" 7 Days a week "> 7 Days a week </option>
-                              </select>
-                           </div>
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="storage_place" id="storage_place" class="form-control" placeholder="Where do you store your goods today ?">
-                           </div>
-                               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <select  name="working_days" id="working_days"  class="selectpicker form-control" data-style="btn-white">
-                                 <option value="no choice "> Where do you store your goods today ?</option>
-                                 <option value="Home"> Home </option>
-                                 <option value=" My own warehouse"> My own warehouse</option>
-                                 <option value="Sharing warehouse with others "> Sharing warehouse with others </option>
-                                 <option value="Fulfillment company "> Fulfillment company  </option>
-                                 <option value="Other"> Other</option>
-                              </select>
-                           </div>
-                                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <select  name="company_size" id="company_size"  class="selectpicker form-control" data-style="btn-white">
-                                 <option value="no choice "> How do you classify your company size  ?</option>
-                                 <option value="Startup"> Startup </option>
-                                 <option value="Small company"> Small company </option>
-                                 <option value="Medium company "> Medium company </option>
-                                 <option value="Large company  "> Large company   </option>
-                              </select>
-                           </div>
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="storage_costs" id="storage_costs" class="form-control" placeholder="Storage costs: How much does it cost you annually?">
-                           </div>
-
-                           <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                               <label class="sr-only">Select Department</label>
                               <select name="select_service" id="select_service" class="selectpicker form-control" data-style="btn-white">
                                  <option value="12">Select Service</option>
@@ -867,23 +834,20 @@
                                  <option value="Tover Design">Tover Design</option>
                                  <option value="Others">Others</option>
                               </select>
-                           </div> -->
-                           <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           </div>
+                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                               <textarea class="form-control" name="comments" id="comments" rows="6" placeholder="Give us more details.."></textarea>
-                           </div> -->
+                           </div>
                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                              <button type="submit" value="SEND" id="submit" onclick="submitToAPI(event)" class="btn btn-light btn-radius btn-brd grd1 btn-block">Submit!</button>
+                              <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Get a Quote</button>
                            </div>
                         </fieldset>
                      </form>
                   </div>
                </div>
-               <!-- end col   -->
             </div>
-            <!-- end row -->
          </div>
-         <!-- end container -->
-      </div>
+      </div> -->
       <!-- end section -->
       <!-- footer -->
       <footer id="footer">
@@ -902,14 +866,15 @@
                   <div class="widget widget_links">
                      <h2 class="widget-title"><span>COMPANY LINKS</span></h2>
                      <ul class="wprt-links clearfix col2">
-                        <li><a data-scroll="" href="index.html">Home</a></li>
-                        <li><a data-scroll="" href="index.html#about">About Us</a></li>
-                        <li><a data-scroll="" href="index.html#services">Benefits</a></li>
+                        <li><a data-scroll="" href="#home">Home</a></li>
+                        <li><a data-scroll="" href="#about">About Us</a></li>
+
                         <!-- <li><a data-scroll="" href="#projects">Our Work</a></li> -->
                         <!-- <li><a data-scroll="" href="#testimonials">Testimonials</a></li> -->
-                        <li><a data-scroll="" href="index.html#price">Features</a></li>
-                        <li><a data-scroll="" href="index.html#How">How Storly works</a></li>
-                </ul>
+                        <li><a data-scroll="" href="#price">Features</a></li>
+                        <li><a data-scroll="" href="list_warehouse.html#services">Benefits</a></li>
+                        <li><a data-scroll="" href="list_warehouse.html#How">How Storly works</a></li>
+					 </ul>
                   </div>
                </div>
                <div class="col-md-4">
@@ -918,7 +883,7 @@
                      <ul>
                         <li class="address clearfix">
                            <span class="hl">Address:</span>
-                           <span class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                           <span class="text">Riyadh, King Fahad road, Olaya view.</span>
                         </li>
                         <li class="phone clearfix">
                            <span class="hl">Phone:</span>
