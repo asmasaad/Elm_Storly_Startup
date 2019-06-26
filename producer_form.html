@@ -45,11 +45,7 @@
                          alert ("Name can not less than 2 char");
                 return;
             }
-            var LNAME = /[A-Za-z]{1}[A-Za-z]/;
-            if (!LNAME.test($("#last_name").val())) {
-                alert ("Please enter valid mobile number");
-                return;
-            }
+
         
 */
 
@@ -66,7 +62,7 @@
    var services = $("#services").val();
    var working_days = $("#working_days").val();
    var working_hours = $("#working_hours").val();
-   var temp = $("#temp option:selected").text();
+   var temp = $("#temp").val();
    var license = $("input[name='license']:checked").val();
    var Stored_items = $("#Stored_items").val();
    var cost_per_week = $("#cost_per_week").val();
@@ -104,7 +100,7 @@
          
          success: function () {
            // clear form and show a success message
-             window.location.href = "thank_you.html"; 
+             window.location.href = "thank_you_producer.html"; 
          },
          error: function () {
            // show an error message
@@ -794,9 +790,6 @@
                               </select>
                            </div>
 
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="temp" id="temp" class="form-control" placeholder="What is your warehouse temperature?">
-                           </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                              <select name="temp" id="temp" class="selectpicker form-control" data-style="btn-white">
                                  <option value="No Choice">What is your warehouse temperature ?</option>
