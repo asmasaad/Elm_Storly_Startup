@@ -43,7 +43,7 @@
 </script>
 
       <script >
-   
+
    function submitToAPI(e) {
        e.preventDefault();
        var URL = "https://6yqgf7jsh6.execute-api.eu-west-1.amazonaws.com/storly/consumer";
@@ -84,7 +84,7 @@
           phone : phone,
           space : space,
           time : time,
-          city : city, 
+          city : city,
           number_of_warehousing :number_of_warehousing,
           WHservice : WHservice,
           order_rate : order_rate ,
@@ -105,10 +105,10 @@
          contentType: "application/json; charset=utf-8",
          data: JSON.stringify(data),
 
-         
+
          success: function () {
            // clear form and show a success message
-             window.location.href = "thank_you_consumer_ar.html"; 
+             window.location.href = "thank_you_consumer_ar.html";
          },
          error: function () {
            // show an error message
@@ -133,7 +133,7 @@
                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-hidden">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-hidden">
                            <div class="gem-contacts-item gem-contacts-phone">
-                              <a class="phone-icon" href="#" target="_blank" title="phone"><i class="fa fa-phone" aria-hidden="true"></i>+011 111-1111</a>
+                              <a class="phone-icon" href="#" target="_blank" title="phone"><i class="fa fa-phone" aria-hidden="true"></i>+966 555 31073</a>
                            </div>
                         </div>
                         <div class="top-area-block top-area-socials socials-colored-hover">
@@ -741,7 +741,7 @@
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                              <input type="text" name="phone" id="phone" class="form-control" placeholder="رقم هاتفك">
                           </div>
-                        
+
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                              <select name="space" id="space" class="selectpicker form-control" data-style="btn-white">
                                  <option value="No Choice ">كم تبلغ المساحة التي تحتاجها؟ مقدرة بعدد الطبليات</option>
@@ -801,8 +801,8 @@
                                   <option value="Personal "> شخصي   </option>
                                  <option value=" Charity "> خيري </option>
                               </select>
-                           </div>             
-                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" > 
+                           </div>
+                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
                              <select name="industry" id="industry" class="selectpicker form-control" data-style="btn-white">
                                  <option value="No Choice" >ما هو مجال أعمالك؟ </option>
                                  <option value="General">عام</option>
@@ -830,7 +830,7 @@
                                   <option value=" 7 Days a week "> ٧ أيام في الأسبوع </option>
                               </select>
                            </div>
-                       
+
                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                              <select  dir="rtl"  name="storage_place" id="storage_place"  class="selectpicker form-control" data-style="btn-white">
                                  <option value="no choice "> أين تخزن بضائعك في الوقت الحالي؟ </option>
@@ -917,11 +917,11 @@
                         </li>
                         <li class="phone clearfix">
                            <span class="hl">الهاتف</span>
-                           <span class="text">+011 111 1111</span>
+                           <span class="text">+966 555 31073</span>
                         </li>
                         <li class="email clearfix">
                            <span class="hl">البريد الإلكتروني: </span>
-                           <span class="text">Storly@storly.com</span>
+                           <span class="text">info@storly.net</span>
                         </li>
                      </ul>
                   </div>
@@ -969,4 +969,3 @@
       <script src="js/hoverdir.js"></script>
    </body>
 </html>
-
