@@ -32,13 +32,33 @@
    </style>
    <head>
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143388809-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143388809-1');
+</script>
 
       <script >
 
    function submitToAPI(e) {
        e.preventDefault();
        var URL = "https://6yqgf7jsh6.execute-api.eu-west-1.amazonaws.com/storly/consumer";
-
+       if ( $("#first_name").val()==("") ){
+                         alert ("الرجاء تعبئة الاسم");
+                return;
+            }
+            if ( $("#email").val()==("") ){
+                         alert ("الرجاء تعبئة الايميل");
+                return;
+            }
+            if ( $("#phone").val()==("") ){
+                         alert ("الرجاء تعبئة رقم الهاتف ");
+                return;
+            }
    var name = $("#first_name").val();
    var lastname = $("#last_name").val();
    var email = $("#email").val();
@@ -148,10 +168,6 @@
                      <li><a data-scroll="" href="indexAR.html#services">المزايا</a></li>
                      <li><a data-scroll="" href="indexAR.html#How">كيف يعمل ستورلي </a></li>
 
-                     <!-- <li><a data-scroll href="#projects">Our Work</a></li>
-                     <li><a data-scroll href="#testimonials">Testimonials</a></li>
-                     <li><a data-scroll href="#price">Price</a></li>
-                     <li><a data-scroll href="#contact">Contact Us</a></li>  -->
                   </ul>
                </div>
             </div>
@@ -668,7 +684,7 @@
 
                  <h3 style="color: white">s</h3>
 
-                  <h3>لنساعدك في مشروعك أكثر </h3>
+                  <h3>دعنا نتعرف على أعمالك</h3>
                   <p class="lead">الرجاء الإجابة على الأسئلة التالية، ستساعدنا هذه الأسئلة في العثور على المخزن المناسب لاحتياجاتك</p>
                </div>
                <!-- end col -->
@@ -728,7 +744,7 @@
 
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                              <select name="space" id="space" class="selectpicker form-control" data-style="btn-white">
-                                 <option value="No Choice ">كم المساحة التي تريدها ؟ </option>
+                                 <option value="No Choice ">كم تبلغ المساحة التي تحتاجها؟ مقدرة بعدد الطبليات</option>
                                  <option value=" 1-3 pallets ">١-٣ طبليات</option>
                                  <option value=" 3-10 pallets"> ٣-١٠ طبليات</option>
                                   <option value="10-30 pallets"> ١٠-٣٠ طبليات </option>
@@ -738,7 +754,7 @@
 
 
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="time" id="time" class="form-control" placeholder="لأي مدة تحتاج لتخزين بضائعك ؟">
+                              <input type="text" name="time" id="time" class="form-control" placeholder="كم تحتاج مدة لتخزين بضائعك؟ ">
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                               <input type="text" name="city" id="city" class="form-control" placeholder="ما هي المدينة التي ترغب بتخزين بضائعك بها؟ ">
@@ -835,7 +851,7 @@
                               </select>
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="storage_costs" id="storage_costs" class="form-control" placeholder=" كم يكلفك التخزين سنوياً؟">
+                              <input type="text" name="storage_costs" id="storage_costs" class="form-control" placeholder=" تكاليف التخزين: كم يكلفك التخزين سنوياً؟">
                            </div>
 
                            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

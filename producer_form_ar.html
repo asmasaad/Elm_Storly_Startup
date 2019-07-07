@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
    <!-- Basic -->
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,8 +30,29 @@
      margin-left: 30px;
    }
    </style>
+<head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143388809-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-143388809-1');
+</script>
+
+</head>
     <head>
+       <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143388809-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143388809-1');
+</script>
+
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
       <script >
@@ -39,7 +60,19 @@
    function submitToAPI(e) {
        e.preventDefault();
        var URL = "https://6yqgf7jsh6.execute-api.eu-west-1.amazonaws.com/storly/warehouse";
-
+       if ( $("#first_name").val()==("") ){
+                         alert ("الرجاء تعبئة الاسم");
+                return;
+            }
+            if ( $("#email").val()==("") ){
+                         alert ("الرجاء تعبئة الايميل");
+                return;
+            }
+            if ( $("#phone").val()==("") ){
+                         alert ("الرجاء تعبئة رقم الهاتف ");
+                return;
+            }
+          
    var name = $("#first_name").val();
    var lastname = $("#last_name").val();
    var email = $("#email").val();
@@ -664,8 +697,8 @@
                <div class="col-md-8 col-md-offset-2">
                  <h3 style="color: white">s</h3>
 
-                  <h3> لنتعرف على المساحة المتوفرة لديك </h3>
-                  <p class="lead">الرجاء الإجابة على الأسئلة التالية، ستساعدناإجاباتك في العثور على صاحب أعمال مناسب للمخزن الخاص بك.</p>
+                  <h3> دعنا نتعرف على المساحة المتوفرة لديك </h3>
+                  <p class="lead">الرجاء الإجابة على الأسئلة التالية، ستساعدنا هذه الأسئلة في ترتيب إنضمامك لمنصتنا</p>
                </div>
                <!-- end col -->
             </div>
@@ -710,20 +743,20 @@
                      <form id="contactform" class="row" name="contactform" method="post">
                         <fieldset class="row-fluid">
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <input type="text" name="first_name" id="first_name" class="form-control" placeholder="الاسم الأول" required >
+                             <input type="text" name="first_name" id="first_name" class="form-control" placeholder="الاسم الأول" required />
                           </div>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <input type="text" name="last_name" id="last_name" class="form-control" placeholder="اسم العائلة" required >
+                             <input type="text" name="last_name" id="last_name" class="form-control" placeholder="اسم العائلة" required />
                           </div>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <input type="email" name="email" id="email" class="form-control" placeholder="بريدك الإلكتروني" required >
+                             <input type="email" name="email" id="email" class="form-control" placeholder="بريدك الإلكتروني" required />
                           </div>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                             <input type="text" name="phone" id="phone" class="form-control" placeholder="رقم هاتفك">
+                             <input type="text" name="phone" id="phone" class="form-control" placeholder="رقم هاتفك"/>
                           </div>
                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                              <select name="city" id="city" class="selectpicker form-control" data-style="btn-white">
-                                 <option value="__">أي المدن أقرب من المخزن الخاص بك؟</option>
+                                 <option value="__"> أي مدينة قريبة من المخزن الخاص بك؟ </option>
                                  <option value="riyadh">الرياض</option>
                                  <option value="jeddah"> جدة</option>
                                   <option value="dammam"> الدمام </option>
@@ -750,7 +783,7 @@
                            </div>
                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                              <select  name="services" id="services"  class="selectpicker form-control" data-style="btn-white">
-                                 <option value="__">ماهي الخدمات الإضافية المقدمة ؟  </option>
+                                 <option value="__">ما هي خدمات انجاز الطلبات التي تقدمها؟ </option>
                                  <option value="pick">تجميع و تغليف </option>
                                  <option value="delivery">التوصيل </option>
                               </select>
@@ -806,17 +839,17 @@
                               </select>
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="cost_per_week" id="cost_per_week" class="form-control" placeholder="ما هي تكلفة إيجار طبلية واحدة لمدة أسبوع؟ ">
+                              <input type="text" name="cost_per_week" id="cost_per_week" class="form-control" placeholder="ما هي تكلفة إيجار طبلية لمدة شهر؟ ">
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="cost_per_month" id="cost_per_month" class="form-control" placeholder="ما هي تكلفة إيجار طبلية واحدة لمدة شهر؟ ?">
+                              <input type="text" name="cost_per_month" id="cost_per_month" class="form-control" placeholder="ما هي تكلفة إيجار طبلية لمدة 3 أشهر">
                            </div>
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" name="cost_per_year" id="cost_per_year" class="form-control" placeholder=" ما هي تكلفة إيجار طبلية لمدة سنة ">
+                              <input type="text" name="cost_per_year" id="cost_per_year" class="form-control" placeholder= "ما هي تكلفة إيجار طبلية لمدة سنة؟ ">
                            </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                              <select name="fulfill" id="fulfill" class="selectpicker form-control" data-style="btn-white">
-                                 <option value="No Choice">كم عدد من المرات يمكنك إنجاز الطلبات؟   </option>
+                                 <option value="No Choice"> لأي عدد من المرات يمكنك إنجاز الطلبات؟ </option>
                                  <option value="more than once"> أكثر من مرة في اليوم</option>
                                  <option value="daily">  يومياً </option>
                                   <option value="weekly "> أسبوعياً </option>
