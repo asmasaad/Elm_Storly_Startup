@@ -107,10 +107,11 @@ h2::after {
     width: 180px;
     height: 5px;
     content: "";
-    background: #fbcf00;
+    background: white;
     position: relative;
     display: block;
     margin: 10px 0;
+    right: 100%;
 }
 h5 {
     font-size: 18px;
