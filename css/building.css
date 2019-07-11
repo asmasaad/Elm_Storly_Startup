@@ -103,6 +103,11 @@ body.building_version .first-section h2 {
     background-size: cover;
     background-repeat: no-repeat;
 }
+#How.section.wb {
+    background: url('../uploads/building/construction01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 h2::after {
     width: 180px;
     height: 5px;
